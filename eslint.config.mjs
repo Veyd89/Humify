@@ -13,6 +13,12 @@ const eslintConfig = defineConfig([
     "build/**",
     "next-env.d.ts",
   ]),
+  {
+    files: ["*.ts"],
+    rules: {
+      "@typescript-eslint/explicit-function-return-type": "error",
+    },
+  },
 ]);
 
 export default eslintConfig;
