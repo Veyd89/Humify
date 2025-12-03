@@ -10,5 +10,8 @@ export interface InputPropsType {
 export interface ButtonPropsType {
   label: string;
   type?: HTMLButtonElement["type"];
-  onClick?: (...args: unknown[]) => void;
+  onClick?: (
+    event: React.MouseEvent<HTMLButtonElement>,
+    ...args: unknown[]
+  ) => void;
 }

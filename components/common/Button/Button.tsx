@@ -1,3 +1,5 @@
+"use client";
+
 import { ButtonPropsType } from "../component.type";
 
 const Button = ({ label, type, onClick }: ButtonPropsType) => {
@@ -5,7 +7,7 @@ const Button = ({ label, type, onClick }: ButtonPropsType) => {
     <button
       type={type}
       className="w-full bg-[#7B1113] text-white rounded-lg cursor-pointer py-3 text-lg"
-      onClick={(...args) => onClick?.(...args)}
+      onClick={(e) => onClick?.(e)}
     >
       {label}
     </button>

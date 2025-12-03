@@ -3,16 +3,25 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --primary: #f9f4f0;
+  --brand: #4a0d12;
+  --dark: #222222;
+  /* --dark: #333333; */
+  --neutral-dark: #222222; /* Text Navbar/Sidebar */
+  --warm-dark: #3a2f28; /* | Text Main Page */
+  --dark-wine: #671c22; /* | Accent / Link | Soft Brown */
+}
+@theme {
+  --color-primary: var(--primary);
+  --color-brand: var(--brand);
+  --color-dark: var(--dark);
+
+  --color-neutral-dark: var(--neutral-dark);
+  --color-warm-dark: var(--warm-dark);
+  --color-dark-wine: var(--dark-wine);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 }
-
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-} */

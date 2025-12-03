@@ -1,20 +1,19 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/layouts/Navbar";
+import { NextFont } from "next/dist/compiled/@next/font";
+import Sidebar from "./../components/layouts/Sidebar";
 
-// const geistSans = Geist({
-//   variable: "--font-geist-sans",
-//   subsets: ["latin"],
-// });
-
-// const geistMono = Geist_Mono({
-//   variable: "--font-geist-mono",
-//   subsets: ["latin"],
-// });
-
-const inter = Inter({
+const inter: NextFont = Inter({
   subsets: ["latin"],
-  weight: ["400", "600", "800"],
+  // weight: ["400"],
+  weight: ["300", "400", "500", "600", "700", "800"],
+  // weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+});
+const poppins: NextFont = Poppins({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
@@ -29,8 +28,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} antialiased `}>
-        <main className="bg-white ">{children}</main>
+      <body className={`${poppins.className} antialiased `}>
+        <main className="bg-primary min-h-screen">
+          <Navbar />
+          <Sidebar />
+          {children}
+        </main>
       </body>
     </html>
   );

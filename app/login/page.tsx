@@ -1,10 +1,14 @@
-import Button from "@/components/Button/Button";
-import Input from "@/components/Input/Input";
+"use client";
+
+import Button from "@/components/common/Button/Button";
+import Input from "@/components/common/Input/Input";
 import Image from "next/image";
 
 export default function Login() {
   const loginClickHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
+    // TODO: Will deleted soon just debug
+    console.log("HELLO Just Test");
   };
   return (
     <div className="w-full">
@@ -18,7 +22,7 @@ export default function Login() {
             height={1080}
           />
         </div>
-        <div className="flex flex-col items-center flex-1 pt-24 bg-[#F9F4F0]">
+        <div className="flex flex-col items-center flex-1 pt-24 bg-primary">
           {/* <div className="flex justify-center"> */}
           <div className="flex flex-col gap-20">
             <div className="">
@@ -32,11 +36,9 @@ export default function Login() {
             </div>
 
             <div className="flex flex-col gap-1">
-              <h1 className="text-2xl font-semibold">
+              <h1 className="text-2xl text-dark font-semibold">
                 Welcome Back to{" "}
-                <span className="text-[#4a0d12] font-bold text-3xl">
-                  Humify
-                </span>
+                <span className="text-brand font-bold text-3xl">Humify</span>
               </h1>
               <p>Please enter your details!</p>
             </div>
@@ -46,7 +48,13 @@ export default function Login() {
                 <Input type="email" label="Username" auth />
                 <Input type="password" label="Password" auth />
               </div>
-              <Button label="Login" type="button" onClick={loginClickHandler} />
+              <Button
+                label="Login"
+                type="button"
+                onClick={(e: React.MouseEvent<HTMLButtonElement>) =>
+                  loginClickHandler(e)
+                }
+              />
             </form>
           </div>
           {/* </div> */}
