@@ -36,7 +36,7 @@ export default function Login() {
             </div>
 
             <div className="flex flex-col gap-1">
-              <h1 className="text-2xl text-dark font-semibold">
+              <h1 className="text-2xl text-warm font-semibold">
                 Welcome Back to{" "}
                 <span className="text-brand font-bold text-3xl">Humify</span>
               </h1>
