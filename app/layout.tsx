@@ -1,16 +1,10 @@
 import type { Metadata } from "next";
-import { Inter, Poppins } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layouts/Navbar";
 import { NextFont } from "next/dist/compiled/@next/font";
 import Sidebar from "./../components/layouts/Sidebar";
 
-const inter: NextFont = Inter({
-  subsets: ["latin"],
-  // weight: ["400"],
-  weight: ["300", "400", "500", "600", "700", "800"],
-  // weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-});
 const poppins: NextFont = Poppins({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700", "800"],
@@ -32,7 +26,7 @@ export default function RootLayout({
         <main className="bg-primary min-h-screen">
           <Navbar />
           <Sidebar />
-          {children}
+          <div className="pl-[161px] pt-14">{children}</div>
         </main>
       </body>
     </html>

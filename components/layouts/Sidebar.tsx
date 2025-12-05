@@ -1,6 +1,5 @@
 import {
   BanknoteIcon,
-  CircleQuestionMark,
   LucideCircleQuestionMark,
   LucideLayoutDashboard,
   Network,
@@ -14,10 +13,10 @@ import React from "react";
 
 const Sidebar = () => {
   return (
-    <aside className="bg-white z-10 pl-8 w-fit shadow-[0_4px_8px_-2px_rgba(0,0,0,0.06)]  border-r border-dark/15 h-full fixed">
+    <aside className="bg-white z-10 pl-8 pt-14 shadow-[0_4px_8px_-2px_rgba(0,0,0,0.06)] border-r border-dark/15 h-full fixed w-[161px]">
       <div className="w-32 py-6 text-xs flex flex-col gap-16">
         <div className="flex flex-col gap-2.5">
-          <span className="text-gray-400">Main menu</span>
+          <span className="text-gray-400 ">Main menu</span>
           <ul className="flex flex-col gap-2 text-dark font-normal">
             <li className="py-2 flex items-center gap-1 cursor-pointer">
               <LucideLayoutDashboard

@@ -1,5 +1,5 @@
 "use client";
-import { Bell, Search, User, UserCircle } from "lucide-react";
+import { Bell, Search, UserCircle } from "lucide-react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import React from "react";
@@ -9,8 +9,8 @@ const Navbar = () => {
   const removedRoutes = ["/login", "signup"];
   if (removedRoutes.includes(pathName)) return null;
   return (
-    <nav className="bg-white w-full py-2.5 shadow-[0_1px_6px_-2px_rgba(0,0,0,0.06)]  border-b border-dark/15 z-100">
-      <div className="max-2xl:container  mx-auto px-8 h-full flex justify-between ">
+    <nav className="bg-white w-full h-14 py-2.5 shadow-[0_1px_6px_-2px_rgba(0,0,0,0.06)] border-b border-dark/15 z-100 fixed">
+      <div className="max-2xl:container  mx-auto px-8 h-full flex justify-between">
         {/* shadow-[0_5px_12px_rgba(0,0,0,0.15)] */}
         <div className="flex h-full items-center">
           <Image

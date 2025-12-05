@@ -1,6 +1,6 @@
 "use client";
 
-import { ButtonPropsType } from "../component.type";
+import { ButtonPropsType } from "@/components/component.type";
 
 const Button = ({ label, type, onClick }: ButtonPropsType) => {
   return (
