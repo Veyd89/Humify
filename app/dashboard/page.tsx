@@ -13,11 +13,7 @@ const Dashboard = () => {
             <div className="flex justify-between items-center">
               <span className="text-xl ">350</span>{" "}
               <div className="rounded-full ">
-                <Users
-                  strokeWidth={1}
-                  // size={20}
-                  className="  size-5"
-                />
+                <Users strokeWidth={1} className="size-5" />
               </div>
             </div>
             <p className="text-sm">Total Employees</p>

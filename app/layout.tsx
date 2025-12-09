@@ -22,11 +22,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.className} antialiased `}>
+      <body className={`${poppins.className} antialiased`}>
         <main className="bg-primary min-h-screen">
           <Navbar />
           <Sidebar />
-          <div className="pl-[161px] pt-14">{children}</div>
+          <div className="">{children}</div>
         </main>
       </body>
     </html>

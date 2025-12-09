@@ -1,6 +1,5 @@
-// TODO: Will deleted soon just debug ("use client") should be Server, so the page.tsx just contains its  own elements 
+// TODO: Will deleted soon just debug ("use client") should be Server, so the page.tsx just contains its  own elements
 "use client";
-
 
 import Button from "@/components/common/Button/Button";
 import Input from "@/components/common/Input/Input";
