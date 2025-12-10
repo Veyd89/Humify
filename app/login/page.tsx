@@ -1,4 +1,5 @@
 // TODO: Will deleted soon just debug ("use client") should be Server, so the page.tsx just contains its  own elements
+// will be Use auth group (auth) soon
 "use client";
 
 import Button from "@/components/common/Button/Button";

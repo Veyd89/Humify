@@ -2,7 +2,7 @@
 
 import { Eye, EyeOff } from "lucide-react";
 import { useState } from "react";
-import { InputPropsType } from "../component.type";
+import { InputPropsType } from "@/components/component.type";
 
 const generateIdFromLabel = (idFor: string) => {
   return idFor

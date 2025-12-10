@@ -16,7 +16,7 @@ import React from "react";
 const Sidebar = () => {
   const pathName = usePathname();
   const removedRoutes = ["/login", "signup"];
-  if (removedRoutes.includes(pathName)) return null;
+  if (removedRoutes.includes(pathName)) return <></>;
   return (
     <aside className="bg-white z-10 pl-8 pt-14 shadow-[0_4px_8px_-2px_rgba(0,0,0,0.06)] border-r border-dark/15 h-full fixed w-[161px]">
       <div className="w-32 py-6 text-xs flex flex-col gap-16">

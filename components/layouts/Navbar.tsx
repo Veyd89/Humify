@@ -7,7 +7,7 @@ import React from "react";
 const Navbar = () => {
   const pathName = usePathname();
   const removedRoutes = ["/login", "signup"];
-  if (removedRoutes.includes(pathName)) return null;
+  if (removedRoutes.includes(pathName)) return <></>;
   return (
     <nav className="bg-white w-full h-14 py-2.5 shadow-[0_1px_6px_-2px_rgba(0,0,0,0.06)] border-b border-dark/15 z-100 fixed">
       <div className="max-2xl:container  mx-auto px-8 h-full flex justify-between">
