@@ -22,9 +22,7 @@ const Card = ({
     }
   };
   return (
-    <div
-      className={`px-4 py-2.5 w-2xs  shadow-md rounded-lg ${bgColorClass} border border-black`}
-    >
+    <div className={`px-4 py-2.5 shadow-sm rounded-lg ${bgColorClass} `}>
       <div className="flex flex-col gap-8">
         <div className="flex items-center justify-between">
           <span className="text-sm">{label}</span>

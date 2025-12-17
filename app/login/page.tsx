@@ -2,8 +2,8 @@
 // will be Use auth group (auth) soon
 "use client";
 
-import Button from "@/components/common/Button/Button";
-import Input from "@/components/common/Input/Input";
+import Button from "@/components/common/Button";
+import Input from "@/components/common/Input";
 import Image from "next/image";
 
 export default function Login() {

@@ -28,3 +28,10 @@ export interface CardPropsType {
   statusDesc?: string;
   // </TODO: will be change and refactor soon >
 }
+
+export type ChartsSeriesType =
+  | "Search Engine"
+  | "Direct"
+  | "Email"
+  | "Union Ads"
+  | "Video Ads";
