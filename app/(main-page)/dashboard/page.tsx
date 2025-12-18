@@ -1,6 +1,7 @@
 import Card from "@/components/common/Card";
 import { Users } from "lucide-react";
 import Charts from "./Charts";
+import Table from "./Table";
 
 const Dashboard = () => {
   return (
@@ -48,6 +49,9 @@ const Dashboard = () => {
         />
         <div className="col-span-2 relative bg-white shadow-sm rounded-lg px-4 pt-2">
           <Charts />
+        </div>
+        <div className="col-span-2 relative bg-white shadow-sm rounded-lg px-4 pt-2">
+          <Table />
         </div>
       </div>
     </div>
