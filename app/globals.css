@@ -3,7 +3,10 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --primary: #f9f4f0;
+  /* --primary: #f9f4f0; */
+  /* --primary: #f3f4f6; */
+  --primary: #f5f5f5;
+
   --brand: #4a0d12;
   /* --brand: #50fd00; */
   --dark: #222222;

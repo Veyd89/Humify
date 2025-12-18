@@ -29,9 +29,10 @@ export interface CardPropsType {
   // </TODO: will be change and refactor soon >
 }
 
-export type ChartsSeriesType =
-  | "Search Engine"
-  | "Direct"
-  | "Email"
-  | "Union Ads"
-  | "Video Ads";
+export type ChartsSeriesAllEmployeeType =
+  | "Engineering"
+  | "Finance"
+  | "Marketing"
+  | "HRD/GA"
+  | "House Keeping"
+  | "RND";

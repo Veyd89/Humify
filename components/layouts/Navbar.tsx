@@ -1,5 +1,5 @@
 "use client";
-import { Bell, Search, UserCircle } from "lucide-react";
+import { Bell, Search, User } from "lucide-react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import React from "react";
@@ -10,6 +10,7 @@ const Navbar = () => {
   if (removedRoutes.includes(pathName)) return <></>;
   return (
     <nav className="bg-white w-full h-14 py-2.5 shadow-[0_1px_6px_-2px_rgba(0,0,0,0.06)] border-b border-dark/15 z-100 fixed">
+      {/* TODO: "I will replace it soon with a maximum of 1537, but I need to rethink the logic." */}
       <div className="max-2xl:container  mx-auto px-8 h-full flex justify-between">
         {/* shadow-[0_5px_12px_rgba(0,0,0,0.15)] */}
         <div className="flex h-full items-center">
@@ -22,7 +23,7 @@ const Navbar = () => {
           />
         </div>
 
-        <ul className="flex gap-8 text-dark items-center">
+        <ul className="flex gap-8 text-slate-900 items-center">
           <li>
             <Search strokeWidth={1} className="size-6 cursor-pointer" />
           </li>
@@ -30,13 +31,13 @@ const Navbar = () => {
             <Bell strokeWidth={1} className="size-6 cursor-pointer" />
           </li>
           <li className="flex gap-2 items-center">
-            <UserCircle
+            <User
               strokeWidth={1}
-              className=" rounded-full size-6 cursor-pointer text-dark"
+              className=" rounded-full size-6 cursor-pointer text-slate-900"
             />
 
-            <div className="flex flex-col  justify-center text-dark text-xs font-medium">
-              <span className="text-xs">Dayen Al Fiansyach</span>
+            <div className="flex flex-col  justify-center text-slate-900 text-xs font-medium">
+              <span className="text-sm">Dayen Al Fiansyach</span>
             </div>
           </li>
         </ul>

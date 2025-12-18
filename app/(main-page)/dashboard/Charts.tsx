@@ -1,15 +1,28 @@
 "use client";
 import { useRouter } from "next/navigation";
-import { ChartsSeriesType } from "@/components/component.type";
+import { ChartsSeriesAllEmployeeType } from "@/components/component.type";
 import { ECElementEvent, EChartsOption } from "echarts";
 import EChartsReact from "echarts-for-react";
 
+interface DataEmployee {
+  value: number;
+  name: ChartsSeriesAllEmployeeType;
+}
+
 const Charts = () => {
   const router = useRouter();
+
+  const dataEmployee: DataEmployee[] = [
+    { value: 1048, name: "Engineering" },
+    { value: 735, name: "Finance" },
+    { value: 580, name: "HRD/GA" },
+    { value: 484, name: "House Keeping" },
+    { value: 300, name: "Marketing" },
+  ];
   const option: EChartsOption = {
     title: {
       text: "Total Employee",
-      left: "center",
+      left: 0,
       top: 0,
       textStyle: {
         fontFamily: "Poppins",
@@ -29,14 +42,16 @@ const Charts = () => {
       selectedMode: false,
       orient: "vertical",
       top: "middle",
-      left: 0,
+      right: 0,
     },
     series: [
       {
         name: "Access From",
         type: "pie",
         top: 0,
-        radius: ["50%", "75%"],
+        right: 100,
+        radius: ["45%", "70%"],
+        center: ["35%", "50%"],
         avoidLabelOverlap: false,
         label: {
           show: false,
@@ -52,37 +67,34 @@ const Charts = () => {
         // labelLine: {
         //   show: true,
         // },
-        data: [
-          { value: 1048, name: "Search Engine" },
-          { value: 735, name: "Direct" },
-          { value: 580, name: "Email" },
-          { value: 484, name: "Union Ads" },
-          { value: 300, name: "Video Ads" },
-        ],
+        data: dataEmployee,
       },
     ],
   };
   const onChartClick = (params: ECElementEvent): void => {
-    const name = params.name as ChartsSeriesType;
+    const name = params.name as ChartsSeriesAllEmployeeType;
     if (params.componentType === "series" || params.componentType) {
       switch (name) {
-        case "Direct":
+        case "Engineering":
           router.push("/employee");
           break;
 
-        case "Email":
+        case "Finance":
           router.push("/employee");
           break;
 
-        case "Search Engine":
+        case "HRD/GA":
           router.push("/employee");
           break;
 
-        case "Union Ads":
+        case "House Keeping":
           router.push("/employee");
           break;
 
-        case "Video Ads":
+        case "Marketing":
+          router.push("/employee");
+          break;
+        case "RND":
           router.push("/employee");
           break;
 

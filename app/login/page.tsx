@@ -10,7 +10,7 @@ export default function Login() {
   const loginClickHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     // TODO: Will deleted soon just debug
-    console.log("HELLO Just Test");
+    // console.log("HELLO Just Test");
   };
   return (
     <div className="w-full">
