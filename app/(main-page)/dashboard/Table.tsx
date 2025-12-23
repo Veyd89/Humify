@@ -1,68 +1,43 @@
 /* eslint-disable react-hooks/incompatible-library */
 "use client";
+
+import { camelCaseToTitle } from "@/utils/utils";
 import {
   createColumnHelper,
   flexRender,
   getCoreRowModel,
   useReactTable,
 } from "@tanstack/react-table";
+import { useMemo } from "react";
 
-interface EmployeeLeave {
-  name: string;
-  department:
-    | "Engineering"
-    | "Finance"
-    | "Marketing"
-    | "HRD/GA"
-    | "House Keeping"
-    | "RND";
-  status: "Leave" | "Sick" | "Unexcused Absence";
+interface TableProps<T extends Record<string, unknown>> {
+  data: T[];
 }
 
-const tableData: EmployeeLeave[] = [
-  { name: "Alice Johnson", department: "Engineering", status: "Leave" },
-  { name: "Mark Thompson", department: "Finance", status: "Sick" },
-  { name: "Sarah Chen", department: "RND", status: "Leave" },
-  { name: "David Miller", department: "HRD/GA", status: "Unexcused Absence" },
-  { name: "Elena Rodriguez", department: "Marketing", status: "Sick" },
-  { name: "James Wilson", department: "House Keeping", status: "Leave" },
-];
+const Table = <T extends Record<string, unknown>>({ data }: TableProps<T>) => {
+  const columnHelper = createColumnHelper<T>();
 
-const columnHelper = createColumnHelper<EmployeeLeave>();
+  const columns = useMemo(() => {
+    if (!data.length) return [];
 
-const tblLeaveColumns = [
-  columnHelper.accessor((row, index) => index + 1, {
-    id: "nomor",
-    header: "No",
-    cell: (info) => info.getValue(),
-  }),
-  columnHelper.accessor("name", {
-    header: "Name",
-    cell: (info) => info.getValue(),
-  }),
-  columnHelper.accessor("department", {
-    header: "Department",
-    cell: (info) => info.getValue(),
-  }),
-  columnHelper.accessor("status", {
-    header: "Status",
-    cell: (info) => info.getValue(),
-  }),
-];
+    return (Object.keys(data[0]) as (keyof T)[]).map((key) =>
+      columnHelper.accessor((row) => row[key], {
+        id: String(key),
+        header: camelCaseToTitle(String(key)),
+        cell: (info) => String(info.getValue() ?? ""),
+      })
+    );
+  }, [data, columnHelper]);
 
-const Table = () => {
   const table = useReactTable({
-    data: tableData,
-    columns: tblLeaveColumns,
+    data,
+    columns,
     getCoreRowModel: getCoreRowModel(),
   });
-  // console.log("table-columns", table);
-  // console.log(table);
-  // TODO: Add position on table, add photo and replace on column number
+
   return (
     <div>
       <table className="min-w-full border border-gray-200 text-xs text-slate-900">
-        {/* ===== HEADER ===== */}
         <thead className="bg-gray-100">
           {table.getHeaderGroups().map((headerGroup) => (
             <tr className="border-b border-gray-200 " key={headerGroup.id}>
@@ -80,7 +55,6 @@ const Table = () => {
           ))}
         </thead>
 
-        {/* ===== BODY ===== */}
         <tbody>
           {table.getRowModel().rows.map((row) => (
             <tr

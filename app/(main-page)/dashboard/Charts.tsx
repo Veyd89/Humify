@@ -51,7 +51,7 @@ const Charts = () => {
         top: 0,
         right: 100,
         radius: ["45%", "70%"],
-        center: ["35%", "50%"],
+        center: ["40%", "50%"],
         avoidLabelOverlap: false,
         label: {
           show: false,
