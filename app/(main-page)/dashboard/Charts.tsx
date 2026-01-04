@@ -1,13 +1,12 @@
 "use client";
 import { useRouter } from "next/navigation";
-import { ChartsSeriesAllEmployeeType } from "@/components/component.type";
+
 import { ECElementEvent, EChartsOption } from "echarts";
 import EChartsReact from "echarts-for-react";
-
-interface DataEmployee {
-  value: number;
-  name: ChartsSeriesAllEmployeeType;
-}
+import {
+  ChartsSeriesAllEmployeeType,
+  DataEmployee,
+} from "@/components/component.type";
 
 const Charts = () => {
   const router = useRouter();

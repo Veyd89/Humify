@@ -22,8 +22,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.className} antialiased`}>
-        <main className="bg-primary min-h-screen">
+      <body className={`${poppins.className} antialiased bg-primary`}>
+        <main className=" min-h-screen">
           <Navbar />
           <Sidebar />
           <div className="">{children}</div>

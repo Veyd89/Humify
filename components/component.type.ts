@@ -36,3 +36,8 @@ export type ChartsSeriesAllEmployeeType =
   | "HRD/GA"
   | "House Keeping"
   | "RND";
+
+export interface DataEmployee {
+  value: number;
+  name: ChartsSeriesAllEmployeeType;
+}

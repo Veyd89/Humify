@@ -2,6 +2,7 @@ import Card from "@/components/common/Card";
 import { UserCheck, Users, UserX2 } from "lucide-react";
 import Charts from "./Charts";
 import Table from "./Table";
+import KpiDashboardCharts from "./KpiDashboardCharts";
 
 interface TableData extends Record<string, unknown> {
   name: string;
@@ -74,15 +75,25 @@ const DashboardModule = () => {
             <Table />
           </div>
         </div> */}
-      </div>
-      <div className="flex gap-x-8">
-        <div className="flex-1 relative bg-white shadow-sm rounded-lg px-4 pt-2">
-          <Charts />
+        <div className="col-span-4">
+          <div className="flex gap-x-8">
+            <div className="flex-1 relative bg-white shadow-sm rounded-lg px-4 pt-2">
+              <Charts />
+            </div>
+            <div className="flex-[2.5] relative bg-white shadow-sm rounded-lg px-4 py-4">
+              <div className="flex flex-col gap-2">
+                <h3 className="text-sm">Today Leave</h3>
+                <Table data={data} />
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="flex-[2.5] relative bg-white shadow-sm rounded-lg px-4 py-4">
-          <div className="flex flex-col gap-2">
-            <h3 className="text-sm">Today Leave</h3>
-            <Table data={data} />
+        <div className="col-span-4">
+          <div className="flex">
+            <div className="flex-1 h-96 px-5 pb-6 bg-white rounded-lg">
+              <KpiDashboardCharts />
+            </div>
+            <div className="w-full flex-1  "></div>
           </div>
         </div>
       </div>
